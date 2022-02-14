@@ -12,7 +12,15 @@ The goal of this project is to help a non-profit foundation to identify funding 
 - ID features, EIN and NAME are excluded from modeling.
 
 ### Compiling, Training and Evaluating the Model
-- 
+- The first step in optimizing the model was to drop the STATUS variable, because there were so few observations that it was uninformative. 
+- Additional preprocessing attempts included dropping SPECIAL_CONSIDERATIONS, and condensing rare categories on other variables. These steps resulted in worse performance.
+- A third hidden layer was added, also resulting in worse performance.
+- The number of neurons in the second hidden layer was increased to the same as the first hidden layer. This model also performed worse than the original parameters after dropping STATUS. 
+- The best model that I tested included the original parameters for the model, after removing one uninformative feature. Unfortunately I was unable to improve model performance to the target of 0.75.
+
+![model summary](modelsummary.png)
+
+![model results](modelresults.png)
 
 
 ## Summary
